@@ -1,0 +1,40 @@
+'.text.html.blade:not(.source)':
+  'else …':
+    'prefix': 'else'
+    'body': '@else\n\t${0:# code...}\n'
+
+  'elseif …':
+    'prefix': 'elseif'
+    'body': '@elseif (${1:condition})\n\t${0:# code...}\n'
+
+  'for …':
+    'prefix': 'for'
+    'body': '@for (\$${1:i} = ${2:0}; \$${1:i} < $3; \$${1:i}++)\n\t${0:# code...}\n@endfor'
+
+  'foreach …':
+    'prefix': 'foreach'
+    'body': '@foreach (\$${1:variable} as \$${2:key}${3: => \$${4:value}})\n\t${0:# code...}\n@endforeach'
+
+  'if … else …':
+    'prefix': 'ifelse'
+    'body': '@if (${1:condition})\n\t${2:# code...}\n@else\n\t${3:# code...}\n@endif\n$0'
+
+  'if …':
+    'prefix': 'if'
+    'body': '@if (${1:condition})\n\t${0:# code...}\n@endif'
+
+  'include …':
+    'prefix': 'incl'
+    'body': '@include(\'${1:file}\')$0'
+
+  'while …':
+    'prefix': 'while'
+    'body': '@while (${1:$a <= 10})\n\t${0:# code...}\n@endwhile'
+
+  'section …':
+    'prefix': 'section'
+    'body': '@section(\'${1:name}\')\n\t${0:# code...}\n@stop'
+
+  'extends':
+    'prefix': 'extends'
+    'body': '@extends(\'${1:parent}\')$0'
