@@ -113,6 +113,22 @@
           "name": "escaped.php.blade"
         },
         {
+          "begin": "\\{\\{--",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.comment.leading.php.blade"
+            }
+          },
+          "contentName": "comment.php.blade",
+          "end": "--\\}\\}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.comment.trailing.php.blade"
+            }
+          },
+          "name": "comment.block.php.blade"
+        },
+        {
           "begin": "\\{\\{\\{?",
           "beginCaptures": {
             "0": {
